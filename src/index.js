@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-
-import "./index.css";
 import { AppContainer } from "./ESI/AppContainer";
 import * as serviceWorker from "./serviceWorker";
 

@@ -9,7 +9,7 @@ const StatsContainer = ({ characterName, stats }) => {
     return (
         <div>
             <h1>{characterName}</h1>
-            {stats.map((yearStats, index) => <StatAggregate key={yearStats.year} yearStats={yearStats} />)}
+            {stats.map(yearStats => <StatAggregate key={yearStats.year} yearStats={yearStats} />)}
         </div>
     );
 }

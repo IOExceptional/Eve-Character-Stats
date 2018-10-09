@@ -4,7 +4,7 @@ import { esiActions } from "./data";
 
 const loginButton = ({ getToken }) =>(
     <div>
-        <button onClick={getToken}>Login</button>
+        <button type="button" className="btn btn-success" onClick={getToken}>Get Character</button>
     </div>
 );
 
