@@ -2,11 +2,10 @@ const loginServer = "login.eveonline.com";
 const apiBaseUrl = "https://esi.tech.ccp.is";
 
 const appBaseUrl = "http://localhost:3000";
-const redirectUri = `${appBaseUrl}/callback`;
+const redirectUri = `${appBaseUrl}`;
 
 const clientId = "ab35f467ff6e43f8801a8a669b6fbb89";
 const scopes = "esi-characterstats.read.v1";
-const state = "";
 
 const verifyPath = "/verify/";
 const characterPath = "/v2/characters/{character_id}/stats/";
