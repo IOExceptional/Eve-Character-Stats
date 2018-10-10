@@ -1,25 +1,41 @@
 import React from "react";
+import cx from "classnames";
 
 import { StatItem } from "./StatItem";
 
 import "./StatCategory.css";
 
-const StatCategory = ({ name, properties }) => {
-    if(!properties) { 
-        return null;
+class StatCategory extends React.Component {
+    state = {
+        expanded: false
     }
 
-    const propertyNames = Object.getOwnPropertyNames(properties);
+    onClick() {
+        this.setState({expanded: !this.state.expanded});
+    }
+        
+    render() {
+        const { name, properties } = this.props;
 
+        if(!properties) { 
+            return null;
+        }
 
-    return (
-        <div className="stat-category container-fluid">
-            <h3>{name}</h3>
-            <div className="stat-category-items row">
-                {propertyNames.map(itemName => <StatItem key={itemName} item={itemName} value={properties[itemName]} />)}
+        const propertyNames = Object.getOwnPropertyNames(properties);
+
+        return (
+            <div className="stat-category container-fluid">
+                <h3 className="stat-category-title" onClick={() => this.onClick()}>{name} <span className="click-instruction">Click to {(this.state.expanded && <span>hide</span>) || (<span>expand</span>)} </span></h3>
+                <div className={cx({
+                        "stat-category-items": true,
+                        "row": true,
+                        hidden: !this.state.expanded
+                    })}>
+                    {propertyNames.map(itemName => <StatItem key={itemName} item={itemName} value={properties[itemName]} />)}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export {

@@ -1,3 +1,12 @@
 .stat-category {
     margin: 20px auto;
 }
+
+.chart-holder {
+    text-align: center;
+    overflow: hidden;
+}
+
+.chart-holder canvas {
+
+}

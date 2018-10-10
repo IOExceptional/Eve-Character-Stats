@@ -1,3 +1,17 @@
 .stat-category {
     margin: 20px auto;
 }
+
+.stat-category-title {
+    cursor: pointer;
+}
+
+.click-instruction {
+    font-weight: normal;
+    font-size: 1rem;
+    color: skyblue;
+}
+
+.hidden {
+    display: none;
+}
